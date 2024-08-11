@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Investment Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-attachment: fixed;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            animation: fadeIn 1.5s ease-out forwards;
+            transform: translateY(50px);
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #e0c097;
+            animation: slideIn 1.2s ease-out forwards;
+            transform: translateY(-30px);
+            opacity: 0;
+        }
+
+        @keyframes slideIn {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        label {
+            display: block;
+            font-size: 1em;
+            margin-bottom: 10px;
+            color: #ddd;
+            text-align: left;
+            animation: fadeInText 1.8s ease-out forwards;
+            transform: translateX(-20px);
+            opacity: 0;
+        }
+
+        @keyframes fadeInText {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        select, textarea, button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #555;
+            border-radius: 10px;
+            font-size: 1em;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            background-color: #333;
+            color: #f5f5f5;
+        }
+
+        select:hover, textarea:hover {
+            border-color: #e0c097;
+            box-shadow: 0 0 12px rgba(224, 192, 151, 0.5);
+        }
+
+        button {
+            background-color: #e0c097;
+            color: #333;
+            cursor: pointer;
+            border: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #d4b488;
+            transform: scale(1.05);
+        }
+
+        textarea {
+            resize: none;
+            background-color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Investment Portfolio</h1>
+        <form action="http://localhost:5002/" method="POST">
+            <label for="time">Select the time period</label>
+            <select name="time" id="time">
+                <option value="1 month">1 month</option>
+                <option value="3 month">3 month</option>
+                <option value="12 month">12 month</option>
+                <option value="3 year">3 year</option>
+                <option value="5 year">5 year</option>
+            </select>
+
+            <label for="risk">Select risk factor (in percentage)</label>
+            <select name="risk" id="risk">
+                <option value="0-10">0-10</option>
+                <option value="10-20">10-20</option>
+                <option value="20-30">20-30</option>
+                <option value="30-40">30-40</option>
+                <option value="40-50">40-50</option>
+                <option value="50-60">50-60</option>
+                <option value="60-70">60-70</option>
+                <option value="70-80">70-80</option>
+                <option value="80-90">80-90</option>
+                <option value="90-100">90-100</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <textarea class="form-control" id="comment" name="query6" rows="2" cols="50" autofocus>{{output1}}</textarea>
+    </div>
+</body>
+</html>
+
